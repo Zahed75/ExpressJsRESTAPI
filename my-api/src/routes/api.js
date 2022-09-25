@@ -7,5 +7,7 @@ const router=express.Router();
 router.get("/hello",HelloController.Hello)
 router.post("/helloPost",HelloController.HelloPost)
 
+
+
 //export
 module.exports=router;
