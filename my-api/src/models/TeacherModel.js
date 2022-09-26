@@ -1,11 +1,11 @@
 const mongoose=require('mongoose')
 const DataSchema=mongoose.Schema({
     Name:String,
-    Roll:String,
-    Class:String,
-    Remarks:String,
+    Faculty:String,
+    EmId:String,
+    Salary:String,
 })
 
-const TeacherModel= mongoose.models("Teacher",DataSchema)
+const TeacherModel= mongoose.model("teachers",DataSchema)
 
 module.exports=TeacherModel;
