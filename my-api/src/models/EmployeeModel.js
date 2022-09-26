@@ -1,13 +1,14 @@
 const mongoose=require('mongoose')
 
 const DataSchema=mongoose.Schema({
-    Name:String,
-    Role:String,
-    Salary:String,
-    Adult:Boolean,
+    Name:{type:String},
+    Role:{type:String},
+    Salary:{type:Number},
+    Adult:{type:Boolean},
     Comments:[],
-    Address:{},
-    dob:Date,
-})
-const EmployeeModel= mongoose.model("employee",DataSchema)
+    Address:{type:String,default:"Dhaka"},
+    dob:{type:Date,default:Date.now},
+
+},{versionKey:false})
+const EmployeeModel= mongoose.model("employees",DataSchema)
 module.exports=EmployeeModel
