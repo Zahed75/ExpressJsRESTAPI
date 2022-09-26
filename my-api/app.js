@@ -10,7 +10,7 @@ const mongoSanitize = require('express-mongo-sanitize')
 const xss = require('xss-clean')
 const hpp = require('hpp')
 const cors = require('cors')
-
+const mongoose= require('mongoose');
 
 //Security Middleware Implement
 
@@ -29,6 +29,17 @@ const limiter = rateLimit({
 })
 
 app.use(limiter)
+
+//MongoDB Database Connections
+
+let URI="mongodb://127.0.0.1:27017/school"
+let OPTION={user:'',pass:''}
+
+mongoose.connect(URI,OPTION,(error)=>{
+    console.log("Database Connections Success....");
+    console.log(error);
+})
+
 
 //undefined Route
 app.use("/api/v1", router)
