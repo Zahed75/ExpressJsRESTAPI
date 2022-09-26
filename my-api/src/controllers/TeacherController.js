@@ -44,3 +44,19 @@ exports.UpdateTeacher=(req,res)=>{
         }
     })
 }
+
+
+//Delete Data
+
+exports.DeleteTeacher=(req,res)=>{
+    let id=req.params.id;
+    let QUERY={_id:id}
+    TeacherModel.remove(QUERY,(err,data)=>{
+        if(err){
+            res.status(400).json({'status':"Failed",data:err});
+        }
+        else{
+            res.status(200).json({status:200,data:data})
+        }
+    })
+}

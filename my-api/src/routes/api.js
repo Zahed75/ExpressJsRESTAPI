@@ -14,6 +14,7 @@ router.post("/helloPost",HelloController.HelloPost)
 router.post("/insert-teacher-data",TeacherController.InsertTeacher)
 router.get("/get-teacher",TeacherController.ReadTeacher)
 router.post("/Update-teacher/:id",TeacherController.UpdateTeacher)
+router.delete("/delete-teacher/:id",TeacherController.DeleteTeacher)
 
 //export
 module.exports=router;
