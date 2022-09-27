@@ -1,9 +1,9 @@
 const mongoose=require('mongoose')
 
 const DataSchema=mongoose.Schema({
-    Name:{type:String},
-    Role:{type:String},
-    Salary:{type:Number},
+    Name:{type:String,unique:true},
+    Role:{type:String,required:true},
+    Salary:{type:Number, min:6, max:12},
     Adult:{type:Boolean},
     Comments:[],
     Address:{type:String,default:"Dhaka"},
